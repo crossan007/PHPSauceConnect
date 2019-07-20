@@ -30,7 +30,7 @@ class LinuxSauce implements SauceVersion{
         ConsoleWriteLine("SauceConnect not present.  Downloading");
         $tempgz = $this->scBasePath.DIRECTORY_SEPARATOR.$this->getBinaryName().".tar.gz";
         file_put_contents($tempgz,fopen($this->getURL(),"r"));
-        $gz = new PharData($tempgz);
+        $gz = new \PharData($tempgz);
         if ($gz) {
             $gz->extractTo($this->scBasePath);
             ConsoleWriteLine("SauceConnect Downloaded");
