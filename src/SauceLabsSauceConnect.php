@@ -66,6 +66,6 @@ class SauceLabsSauceConnect {
     }
 
     public function GetWDHost() {
-        return $this->settings->SauceUsername.":".$this->settings->SauceKey."@ondemand.saucelabs.com/wd/hub";
+        return $this->settings->SauceUsername.":".$this->settings->SauceKey."@localhost:4445/wd/hub";
     }
 }
