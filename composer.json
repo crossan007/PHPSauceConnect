@@ -12,5 +12,10 @@
             "homepage": "https://crossan007.dev",
             "role": "Developer"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "PHPSauceConnect\\":   "src/"
+        }
+    }
 }
