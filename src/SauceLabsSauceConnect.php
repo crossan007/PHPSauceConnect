@@ -36,9 +36,16 @@ class SauceLabsSauceConnect {
         $this->Disconnect();
     }
 
+    private function GetTunnelIdentifierParams() {
+        if (!empty(getenv('TRAVIS_JOB_NUMBER'))){
+            return " --tunnel-identifier \"".getenv('TRAVIS_JOB_NUMBER')."\"";
+        }
+        return;
+    }
+
     public function Connect() {
         
-        $command = $this->sauceVersion->GetFullBinaryPath()." -u \"" . $this->settings->SauceUsername . "\" -k \"". $this->settings->SauceKey."\"";
+        $command = $this->sauceVersion->GetFullBinaryPath()." -u \"" . $this->settings->SauceUsername . "\" -k \"". $this->settings->SauceKey."\" ".$this->GetTunnelIdentifierParams();
         $descriptorspec = array(
             0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
             1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
