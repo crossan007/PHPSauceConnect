@@ -2,7 +2,7 @@
 
 namespace PHPSauceConnect;
 
-class SauceConectSettings {
+class SauceConnectSettings {
     public $SauceUsername;
     public $SauceKey;
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace PHPSauceConnect;
+use PHPSauceConnect\SauceConnectSettings;
 
 class SauceLabsSauceConnect {
     private $settings;
@@ -11,13 +12,13 @@ class SauceLabsSauceConnect {
     private $sauceVersion;
 
     public static function GetSauceInstance($Username, $Key) {
-        $sauceSettings = new SauceConectSettings();
+        $sauceSettings = new SauceConnectSettings();
         $sauceSettings->SauceUsername = $Username;
         $sauceSettings->SauceKey = $Key;
         return new SauceLabsSauceConnect($sauceSettings);
     }
 
-    private function __construct(SauceConectSettings $SauceConnectSettings) {
+    private function __construct(SauceConnectSettings $SauceConnectSettings) {
         $this->settings = $SauceConnectSettings;
         switch (PHP_OS) {
             case "WINNT":
