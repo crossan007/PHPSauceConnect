@@ -1,0 +1,16 @@
+{
+    "name": "crossan007/php-sauceconnect",
+    "type": "library",
+    "description": "PHP Class for easily opening SauceConnect tunnels to SauceLabs",
+    "keywords": ["selenium","testing","sauceconnect"],
+    "homepage": "https://crossan007.dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Charles Crossan",
+            "email": "crossan007@gmail.com",
+            "homepage": "https://crossan007.dev",
+            "role": "Developer"
+        }
+    ]
+}
