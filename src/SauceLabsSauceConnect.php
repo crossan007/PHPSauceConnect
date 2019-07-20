@@ -53,6 +53,9 @@ class SauceLabsSauceConnect {
             if (strpos($read,"Sauce Connect is up, you may start your tests.")){
                 break;
             }
+            elseif (strpos($read,"error")){
+                throw new \Exception("Error opening SauceConnect Tunnel: " . $read);
+            }
         }
         ConsoleWriteLine("Sauce Connect is up, you may start your tests.");
     }
