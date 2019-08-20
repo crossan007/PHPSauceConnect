@@ -30,7 +30,7 @@ class WindowsSauce implements SauceVersion{
         ConsoleWriteLine("SauceConnect not present.  Downloading");
         $tempzip = $this->scBasePath.DIRECTORY_SEPARATOR.$this->getBinaryName().".zip";
         file_put_contents($tempzip,fopen($this->getURL(),"r"));
-        $zip = new ZipArchive;
+        $zip = new \ZipArchive;
         $res = $zip->open($tempzip);
         if ($res === TRUE) {
             $zip->extractTo($this->scBasePath);
